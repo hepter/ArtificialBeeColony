@@ -141,26 +141,37 @@ namespace ABC
         Kaynak Greedy(List<Kaynak> kaynaklar)
         {
             double uygunlukSum = kaynaklar.Sum(a => 1 - a.Uygunluk);//Greedy
-
-            List<int> sans= new List<int>();
-            int i = 0;
-            foreach (Kaynak k in kaynaklar)
+            double rand = rnd.NextDouble() * uygunlukSum;
+            Kaynak selicenKaynak = null;
+            double toplam = 0;
+            foreach (var item in kaynaklar)
             {
-                var newD = ((1 - k.Uygunluk) * 1000).ToString().Substring(0, 3).Replace(",","");
-                int loop = (int.Parse(newD));
-                int[] sayi= new int[loop];
-                for (int j = 0; j < loop; j++)
+                toplam += (1 - item.Uygunluk);
+                if (toplam>rand)
                 {
-                    sayi[j] = i;
-                    
-                }
-                sans.AddRange(sayi);
-                i++;
+                    selicenKaynak= item;
+                    break;
+                }               
             }
+            //List<int> sans= new List<int>();
+            //int i = 0;
+            //foreach (Kaynak k in kaynaklar)
+            //{
+            //    var newD = ((1 - k.Uygunluk) * 1000).ToString().Substring(0, 3).Replace(",","");
+            //    int loop = (int.Parse(newD));
+            //    int[] sayi= new int[loop];
+            //    for (int j = 0; j < loop; j++)
+            //    {
+            //        sayi[j] = i;
+                    
+            //    }
+            //    sans.AddRange(sayi);
+            //    i++;
+            //}
 
 
 
-            Kaynak selicenKaynak = kaynaklar[sans[rnd.Next(0, sans.Count)]];
+            //selicenKaynak = kaynaklar[sans[rnd.Next(0, sans.Count)]];
             return selicenKaynak;
         }
     }
