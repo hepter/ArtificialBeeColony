@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint19 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(10D, 10D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint20 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(20D, 20D);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint21 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(10D, 10D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint22 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(20D, 20D);
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
@@ -76,29 +76,29 @@
             // 
             this.chart1.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.Cross;
             this.chart1.BorderlineWidth = 3;
-            chartArea10.Name = "ChartArea1";
-            chartArea10.Position.Auto = false;
-            chartArea10.Position.Height = 88F;
-            chartArea10.Position.Width = 100F;
-            chartArea10.Position.Y = 12F;
-            this.chart1.ChartAreas.Add(chartArea10);
+            chartArea11.Name = "ChartArea1";
+            chartArea11.Position.Auto = false;
+            chartArea11.Position.Height = 88F;
+            chartArea11.Position.Width = 100F;
+            chartArea11.Position.Y = 12F;
+            this.chart1.ChartAreas.Add(chartArea11);
             this.chart1.Cursor = System.Windows.Forms.Cursors.AppStarting;
-            legend10.Name = "Legend1";
-            this.chart1.Legends.Add(legend10);
+            legend11.Name = "Legend1";
+            this.chart1.Legends.Add(legend11);
             this.chart1.Location = new System.Drawing.Point(1, 201);
             this.chart1.Margin = new System.Windows.Forms.Padding(4);
             this.chart1.Name = "chart1";
-            series10.ChartArea = "ChartArea1";
-            series10.Legend = "Legend1";
-            series10.MarkerBorderWidth = 2;
-            series10.Name = "Series1";
-            dataPoint19.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDot;
-            dataPoint19.BorderWidth = 2;
-            dataPoint19.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataPoint20.CustomProperties = "DrawingStyle=Cylinder";
-            series10.Points.Add(dataPoint19);
-            series10.Points.Add(dataPoint20);
-            this.chart1.Series.Add(series10);
+            series11.ChartArea = "ChartArea1";
+            series11.Legend = "Legend1";
+            series11.MarkerBorderWidth = 2;
+            series11.Name = "Series1";
+            dataPoint21.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDot;
+            dataPoint21.BorderWidth = 2;
+            dataPoint21.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataPoint22.CustomProperties = "DrawingStyle=Cylinder";
+            series11.Points.Add(dataPoint21);
+            series11.Points.Add(dataPoint22);
+            this.chart1.Series.Add(series11);
             this.chart1.Size = new System.Drawing.Size(524, 224);
             this.chart1.TabIndex = 5;
             this.chart1.Text = "chart1";
@@ -465,8 +465,7 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(911, 419);
             this.Controls.Add(this.panel1);
