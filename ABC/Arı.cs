@@ -24,27 +24,20 @@ namespace ABC
 
         public bool KaynagaGit(Kaynak k)
         { 
-       
-            
-
             if (SeciliKaynak==null)
                 SeciliKaynak = k;
-            
 
-
-            Random rnd = new Random();
-            int i = rnd.Next(2);//Seçili Parametre
+            int i = Form1.rnd.Next(2);//Seçili Parametre
     
-            double yeniParametre = k[i] + rnd.NextDouble() * (SeciliKaynak[i] - k[i]);
+            double yeniParametre = k[i] + Form1.rnd.NextDouble() * (SeciliKaynak[i] - k[i]);
             Kaynak yeniKaynak= new Kaynak(k.MaxLimit);
 
             int digerKaynakIndis = (i + 1) % 2;
             yeniKaynak[digerKaynakIndis] = SeciliKaynak[digerKaynakIndis];
             yeniKaynak[i] = yeniParametre;
-            if (yeniKaynak.Uygunluk<SeciliKaynak.Uygunluk)
+            if (yeniKaynak.Uygunluk>SeciliKaynak.Uygunluk)
             {
-                if (SeciliKaynak != null) // Opsiyonel (Gözlemlemek için )
-                    birOncekiKaynak = SeciliKaynak;
+                if (SeciliKaynak != null) birOncekiKaynak = SeciliKaynak;// Opsiyonel ( Gözlemlemek için )
 
                 SeciliKaynak.LimitCounter = 0;
                 SeciliKaynak = yeniKaynak;

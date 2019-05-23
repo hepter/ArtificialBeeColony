@@ -20,12 +20,12 @@ namespace ABC
             MaxLimit = maxLimit;
         }
 
-        public override string ToString()
+        public override string ToString() // Opsiyonel ( Gözlemlemek için )
         {
             return "Uygunluk:" + Uygunluk.ToString().Substring(0, 6)
                                + $" x1: {doubleToString(x1)}"
                                + $" x2: {doubleToString(x2)}"
-                               + " Limit:" + _maxLimit.ToString();
+                               + " Limit:" + _maxLimit;
         }
 
         private string doubleToString(double d)
@@ -38,17 +38,11 @@ namespace ABC
             int len = bonus2 - str.Length + bonus;
             string newStr = new string(' ', len)+ str ;
             return newStr;
-
         }
 
         public bool LimitDoldumu()
         {
-            if (MaxLimit==limitCounter)
-            {
-
-                return true;
-            }
-            return false;
+            return MaxLimit==limitCounter;
         }
 
         public void ResetLimitCounter()
@@ -64,11 +58,8 @@ namespace ABC
             get
             {
                 double result = (0.26 * (Math.Pow(x1, 2) + Math.Pow(x2, 2))) - (0.48 * x1 * x2);
-
                 return EkUygunluk(result);
             }
-            
-            
         }
 
         public int LimitCounter
@@ -85,46 +76,19 @@ namespace ABC
 
         public double this[int index]
         {
-            get
-            {
-                if (index==0)
-                {
-                    return x1;
-                }
-                return x2;
-            }
+            get { return index==0 ? x1 : x2; }
             set
             {
                 if (index == 0)
-                {
                     x1 = value;
-                }
                 else
-                {
                     x2 = value;
-                }
-              
             }
         }
 
         private double EkUygunluk(double d)
         {
-            if (d>=0)
-            {
-                return (double) 1 / (1 + d);
-            }
-            else
-            {
-               return (double)1 + Math.Abs(d);
-            }
-        }
-
-
-        public void BesinSeçim()
-        {
-
-
-
+            return d >= 0 ? (double) 1 / (1 + d) : (double) 1 + Math.Abs(d);
         }
     }
 }
